@@ -5,7 +5,7 @@ import axios from "axios";
 import axios from 'axios';
 
 const BASE_URL = axios.create({
-  baseURL: 'https://backendserver-twkl.onrender.com', // <-- your deployed backend URL
+  baseURL: 'https://backendserver-twkl.onrender.com.onrender.com', // <-- your deployed backend URL
   withCredentials: true // if backend uses cookies/auth
 });
 
