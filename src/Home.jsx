@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+// axios setup
+import axios from 'axios';
 
-// Example API call in React
-const BASE_URL = "https://backendserver-twkl.onrender.com";
+const BASE_URL = axios.create({
+  baseURL: 'https://backendserver-twkl.onrender.com', // <-- your deployed backend URL
+  withCredentials: true // if backend uses cookies/auth
+});
+
+
+
 
 function Home() {
 
