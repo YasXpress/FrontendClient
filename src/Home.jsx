@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+
+// Example API call in React
+const BASE_URL = "https://backendserver-twkl.onrender.com";
+
 function Home() {
 
   const [users, setUsers] = useState([]);
@@ -24,7 +28,7 @@ function Home() {
 
   // FETCH USERS
   const getUsers = () => {
-    axios.get("http://localhost:5000/users")
+    axios.get(`${BASE_URL}/users`)
       .then(res => setUsers(res.data));
   };
 
@@ -63,7 +67,7 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.post("http://localhost:5000/users", form)
+    axios.post(`${BASE_URL}/users`, form)
       .then(() => {
         getUsers();
         alert("User Added");
@@ -72,7 +76,7 @@ function Home() {
 
   // DELETE USER
   const deleteUser = (id) => {
-    axios.delete(`http://localhost:5000/users/${id}`)
+    axios.delete(`${BASE_URL}/users/${id}`)
       .then(() => getUsers());
   };
 
