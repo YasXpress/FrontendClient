@@ -14,6 +14,9 @@ const BASE_URL = axios.create({
 
 function Home() {
 
+
+  const API = "https://backend-i-c6nf.onrender.com";
+
   const [users, setUsers] = useState([]);
 
   const [form, setForm] = useState({
@@ -33,9 +36,13 @@ function Home() {
     }
   });
 
-  // FETCH USERS
+  // FETCH USERS  
   const getUsers = () => {
+<<<<<<< HEAD
     axios.get(`${BASE_URL}/users`)
+=======
+    axios.get(`${API}/users`)
+>>>>>>> a2bada5 (first commit)
       .then(res => setUsers(res.data));
   };
 
@@ -74,7 +81,11 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+<<<<<<< HEAD
     axios.post(`${BASE_URL}/users`, form)
+=======
+    axios.post(`${API}/users`, form)
+>>>>>>> a2bada5 (first commit)
       .then(() => {
         getUsers();
         alert("User Added");
@@ -83,7 +94,11 @@ function Home() {
 
   // DELETE USER
   const deleteUser = (id) => {
+<<<<<<< HEAD
     axios.delete(`${BASE_URL}/users/${id}`)
+=======
+    axios.delete(`${API}/users/${id}`)
+>>>>>>> a2bada5 (first commit)
       .then(() => getUsers());
   };
 
